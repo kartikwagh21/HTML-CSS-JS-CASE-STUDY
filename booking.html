@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GearLease | Reservation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="main-header">
+        <h1>GEAR<span>LEASE</span></h1>
+        <p>PREMIUM PHOTOGRAPHY EQUIPMENT RENTAL </p>
+        <nav>
+            <a href="catalog.html">Catalog</a>
+            <a href="booking.html" class="active">Reservation</a>
+        </nav>
+    </header>
+    <div class="container">
+        <form onsubmit="event.preventDefault(); alert('Booking Request Received!')">
+            <div class="header">
+                <h2>RESERVATION</h2>
+            </div>
+
+            <div class="form-card">
+                <label>Select Gear</label>
+                <select id="cameraSelect" onchange="calculate()">
+                    <option value="6800">Canon EOS R5 (₹6,800/day)</option>
+                    <option value="5900">Sony A7R IV (₹5,900/day)</option>
+                    <option value="8200">Nikon Z9 (₹8,200/day)</option>
+                    <option value="4100">Fujifilm X-T4 (₹4,100/day)</option>
+                    <option value="11000">Leica M11 (₹11,000/day)</option>
+                    <option value="14500">Hasselblad X2D 100C (₹14,500/day)</option>
+                    <option value="9200">Sony Alpha 1 (₹9,200/day)</option>
+                    <option value="5400">Panasonic LUMIX S1H (₹5,400/day)</option>
+                    <option value="10500">Canon EOS C70 (₹10,500/day)</option>
+                    <option value="12800">Fujifilm GFX 100S (₹12,800/day)</option>
+                    <option value="4800">Blackmagic BMPCC 6K Pro (₹4,800/day)</option>
+                    <option value="7400">Nikon Z8 (₹7,400/day)</option>
+                    <option value="7900">Sony FX3 Cinema Line (₹7,900/day)</option>
+                </select>
+
+                <label>Days to Rent</label>
+                <input type="number" id="days" value="1" min="1" oninput="calculate()">
+                <p style="font-size: 0.75em; color: #d4af37; margin-top: 5px;">* Rent for 7+ days to get a 15% Weekly Discount!</p>
+
+                <label>Pickup Date</label>
+                <input type="date" id="date" onchange="checkAvailability()" required>
+                <div id="avail-msg"></div>
+
+                <div class="bill">
+                    <p>Base Rental: <span id="rCost">₹0</span></p>
+                    <p id="discount-row" style="color: #2ecc71; display: none;">
+                        Weekly Discount (15%): <span id="wDiscount">-₹0</span>
+                    </p>
+                    <p>Mandatory Insurance: <span>₹2,300.00</span></p>
+                    <p>Damage Deposit (30%): <span id="dDeposit">₹0</span></p>
+                    <p class="total">Total Estimate: <span id="totalFee">₹0</span></p>
+                </div>
+
+                <button type="submit" class="submit-btn">CONFIRM BOOKING</button>
+            </div>
+        </form>
+    </div>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>GearLease</h4>
+                <p>Providing professionals and enthusiasts with the world's finest imaging technology since 2015. Quality guaranteed.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="catalog.html">Equipment Catalog</a></li>
+                    <li><a href="booking.html">Reserve Gear</a></li>
+                    <li><a href="#">Rental Policy</a></li>
+                    <li><a href="#">Insurance Terms</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p>
+                     ITM Skills University<br>
+                    support@gearlease.com<br>
+                    +91 98765 43210
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 GEARLEASE PREMIUM RENTALS. ALL RIGHTS RESERVED.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
